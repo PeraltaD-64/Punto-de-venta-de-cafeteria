@@ -1,0 +1,45 @@
+// Este codigo fue creado para una cafeteria que comple con una funcion de menu atendiendiendo al cliente.
+// Nuestro artefancto es un codigo que cumple una funcion de menu, que utilizamos como herramienta a la aplicacion de NetBeans.
+// aqui podemos arrancar el programa para la cafeteria y pedir cafe alk gusto.
+    import java.util.Scanner;
+    import java.util.ArrayList;
+    public class PuntoDeVentaCafeteria {
+    public static void main(String[] args) {
+        ArrayList<Producto> menu = new ArrayList<>();
+        menu.add(new Producto("Café Espresso", 2.5));
+        menu.add(new Producto("Café Americano", 2.0));
+        menu.add(new Producto("Cappuccino", 3.0));
+        menu.add(new Producto("Latte", 3.5));
+        menu.add(new Producto("Croissant", 1.5));
+
+        Carrito carrito = new Carrito();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Menú:");
+            for (int i = 0; i < menu.size(); i++) {
+                System.out.println((i + 1) + ". " + menu.get(i).getNombre() + ": $" + menu.get(i).getPrecio());
+            }
+            System.out.println("0. Pagar y salir");
+
+            System.out.print("Elije un producto (0 para pagar): ");
+            int opcion = scanner.nextInt();
+
+            if (opcion == 0) {
+                carrito.mostrarCarrito();
+                break;
+            }
+
+            if (opcion >= 1 && opcion <= menu.size()) {
+                Producto productoElegido = menu.get(opcion - 1);
+                carrito.agregarItem(productoElegido);
+                System.out.println(productoElegido.getNombre() + " agregado al carrito.");
+            } else {
+                System.out.println("Opción inválida.");
+            }
+        }
+
+        scanner.close();
+        System.out.println("Gracias por su compra!");
+    }
+}
