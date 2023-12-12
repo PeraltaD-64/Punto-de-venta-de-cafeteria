@@ -1,6 +1,6 @@
 // Este codigo fue creado para una cafeteria que comple con una funcion de menu atendiendiendo al cliente.
 // Nuestro artefancto es un codigo que cumple una funcion de menu, que utilizamos como herramienta a la aplicacion de NetBeans.
-// aqui podemos arrancar el programa para la cafeteria y pedir cafe alk gusto.
+// aqui podemos arrancar el programa para la cafeteria y pedir cafe al gusto.
     import java.util.Scanner;
     import java.util.ArrayList;
     public class PuntoDeVentaCafeteria {
